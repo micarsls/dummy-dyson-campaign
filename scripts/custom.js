@@ -1,16 +1,21 @@
-document.addEventListener("DOMContentLoaded", function () {});
-
-window.onload = () => {
+document.addEventListener("DOMContentLoaded", () => {
   const fiveMinutes = 60 * 20;
   const display = document.querySelector("#countdown");
   startTimer(fiveMinutes, display);
 
-  var splide = new Splide(".splide", {
-    autoplay: true,
-    interval: 3000,
+  const modal = document.getElementById("modal");
+  const closeModalButton = document.getElementById("closeModal");
+  closeModalButton.addEventListener("click", () => {
+    modal.classList.add("hidden");
   });
-  splide.mount();
-};
+
+  const contact = document.getElementById("contact");
+  contact.addEventListener("submit", (e) => {
+    e.preventDefault();
+    modal.classList.remove("hidden");
+    contact.reset();
+  });
+});
 
 const startTimer = (duration, display) => {
   let timer = duration;

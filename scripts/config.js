@@ -7,6 +7,7 @@ tailwind.config = {
         copper: "#B47A4F",
         blue: "#2E324E",
         lightblue: "#40486A",
+        lightgray: "#F8F8F8",
       },
     },
   },

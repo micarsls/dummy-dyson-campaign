@@ -5,23 +5,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms" rel="stylesheet"></script>
   <script src="scripts/config.js"></script>
-  <!-- Splide JS -->
-  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
-  <script>
-
-  </script>
-  <!-- Custom Timer -->
-  <script src="scripts/timer.js"></script>
-  <!-- Splide CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- Custom JS -->
+  <script src="scripts/custom.js"></script>
   <title>Dyson Airwrap™ Multi-Styler (Blue/Copper) | Dyson UAE</title>
   <link rel="icon" type="image/png" href="assets/icon.png" />
 </head>
 
 <body>
+
+  <!-- Modal for Form -->
+  <div id="modal" class="fixed inset-0 flex items-center justify-center z-50 hidden">
+    <div class="modal-overlay absolute inset-0 bg-gray-500 opacity-40"></div>
+    <div class="modal-container bg-copper w-1/4 mx-auto rounded shadow-lg z-50 overflow-y-auto">
+      <div class="modal-content py-4 text-left px-6 text-white">
+        <div class="flex justify-between items-center pb-3">
+          <p class="text-xl font-medium">Thank you</p>
+          <button id="closeModal" class="modal-close bg-transparent">
+            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512" fill="#f5f5f5">
+              <path
+                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+            </svg>
+          </button>
+        </div>
+        <p class="text-small">We'll get back to you soon! &#128522;</p>
+      </div>
+    </div>
+  </div>
+
   <!-- Timer -->
   <div class="bg-copper fixed top-0 left-0 right-0 z-10 py-2 flex justify-center align-center gap-x-2">
     <p class="text-white">
@@ -41,16 +53,16 @@
       <div>
         <ul class="flex space-x-8">
           <li>
-            <a href="#" class="text-white hover:text-white text-sm">Home</a>
+            <a href="#" class="text-white hover:text-white text-sm">Offers</a>
           </li>
           <li>
-            <a href="#" class="text-white hover:text-white text-sm">Features</a>
+            <a href="#" class="text-white hover:text-white text-sm">Shop</a>
           </li>
           <li>
-            <a href="#" class="text-white hover:text-white text-sm">Reviews</a>
+            <a href="#" class="text-white hover:text-white text-sm">Find a store</a>
           </li>
           <li>
-            <a href="#" class="text-white hover:text-white text-sm">Contact</a>
+            <a href="#" class="text-white hover:text-white text-sm">Support</a>
           </li>
         </ul>
       </div>
@@ -60,7 +72,7 @@
   <!-- Main -->
   <main class="container-fluid pt-32">
     <!-- Highlights -->
-    <section>
+    <section class="pb-10 px-32">
       <div class="grid grid-cols-3 gap-x-10">
         <div class="col-1">
           <img src="assets/dyson-airwrap-complete.png" width="250rem" height="75rem" />
@@ -95,8 +107,12 @@
               Pay in 12 monthly instalments AED167/month with 0% interest*.
               Available at checkout.
             </p>
-            <button type="button" class="bg-copper text-white w-full py-2 mt-2 rounded font-medium">
-              Buy Now
+            <button type="button"
+              class="bg-copper text-white w-full py-2 mt-2 rounded font-medium flex items-center justify-center gap-x-3">
+              <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" fill="#f5f5f5">
+                <path
+                  d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z" />
+              </svg> Buy Now
             </button>
         </div>
         <div class="col-span-2">
@@ -112,33 +128,131 @@
       </div>
     </section>
 
-    <!-- Features -->
-    <section class="py-10">
-      <div class="grid grid-cols-4 gap-x-4">
-        <div class="col-1">01</div>
-        <!-- ... -->
-        <div class="col-1">09</div>
-      </div>
+    <!-- What's in the box -->
+    <section class="py-10 px-32 border-t border-gray-200">
+      <h1 class="text-center text-black font-medium text-2xl">What's in the box? &#10024;</h1>
+      <div class="grid grid-cols-3 gap-x-10">
+        <div class="col-1">
+          <img src="assets/airwrap.png" width="350rem" />
+          <h2 class="text-gray-500 font-medium text-xl my-4">Dyson Airwrap™ multi-styler Complete Long
+            (<span class="text-blue">Prussian blue</span> and <span class="text-copper">rich
+              copper</span>)</h2>
+          <hr />
+          <p class="text-sm font-bold text-bold mt-4">Specifications</p>
+          <ul class="text-sm text-gray-500 ">
+            <li>Cord length: 2.68m</li>
+            <li>Height: 272mm</li>
+            <li>Length: 41mm</li>
+            <li>Width: 48mm</li>
+            <li>Weight: 0.61kg</li>
+            <li>Temperature settings: 3</li>
+            <li>Power: 1,300w</li>
+            <li>Airflow max settings: 13.5l/s</li>
+            <li>Negative ions: Help reduce static</li>
+          </ul>
+        </div>
+        <div class="col-span-2">
+          <div class="grid grid-cols-3 gap-8">
+            <div class="col-1">
+              <img src="assets/coanda.jpeg">
+              <p class="text-sm">Coanda smoothing dryer</p>
+              <p class="text-xs text-gray-500">Multi functional attachment to dry, smooth and hide flyaways</p>
+            </div>
+            <div class="col-1">
+              <img src="assets/firm.jpeg">
+              <p class="text-sm">Firm smoothing brush</p>
+              <p class="text-xs text-gray-500">Smooth, straight style for frizz-prone hair</p>
+            </div>
+            <div class="col-1">
+              <img src="assets/volumising.jpeg">
+              <p class="text-sm">Round volumising brush</p>
+              <p class="text-xs text-gray-500">For volumising and shaping</p>
+            </div>
+            <div class="col-1">
+              <img src="assets/smoothing.jpeg">
+              <p class="text-sm">Soft smoothing brush</p>
+              <p class="text-xs text-gray-500">Smooth, straight style for fine hair</p>
+            </div>
+            <div class="col-1">
+              <img src="assets/30mm.jpeg">
+              <p class="text-sm">30mm long Airwrap™ barrel</p>
+              <p class="text-xs text-gray-500">Volominous curls or waves for longer hair</p>
+            </div>
+            <div class="col-1">
+              <img src="assets/40mm.jpeg">
+              <p class="text-sm">40mm long Airwrap™ barrel</p>
+              <p class="text-xs text-gray-500">Loose curls or waves for longer hair</p>
+            </div>
+            <div class="col-1">
+              <img src="assets/case.jpeg">
+              <p class="text-sm">Storage case</p>
+              <p class="text-xs text-gray-500">Protects and neatly stores your Dyson Airwrap™ multi-styler and six
+                attachments</p>
+            </div>
+            <div class="col-1">
+              <img src="assets/filter.jpeg">
+              <p class="text-sm">Filter cleaning brush</p>
+              <p class="text-xs text-gray-500">Filter clearning for your Dyson Airwrap™ multi-styler</p>
+            </div>
+          </div>
+        </div>
     </section>
 
-    <!-- Slider/Carousel/Gallery -->
-    <section class="py-10">
-      <div class="splide" aria-labelledby="carousel-heading">
-        <h2 id="carousel-heading">Splide Basic HTML Example</h2>
-
-        <div class="splide__track">
-          <ul class="splide__list">
-            <li class="splide__slide">Slide 01</li>
-            <li class="splide__slide">Slide 02</li>
-            <li class="splide__slide">Slide 03</li>
-          </ul>
+    <!-- Enchanced Co-anda -->
+    <section class="py-10 px-32 bg-black text-white">
+      <h1 class="text-xl text-center">Our styling attachments have been re-engineered with Enhanced Coanda airflow for
+        increased control</h1>
+      <div class="grid grid-cols-3 gap-8 mt-10">
+        <div class="col-1">
+          <img src="assets/barrel.jpg">
+          <p class="text-xs font-bold">Faster and easier</p>
+          <h4 class="text-xl">Coanda to curl</h4>
+          <p class="text-gray-100 text-xs">Create clockwise and anticlockwise curls with one barrel. Enhanced Coanda
+            airflow attracts and self-wraps hair in both directions for voluminous curls or waves.</p>
+        </div>
+        <div class="col-1">
+          <img src="assets/brush.jpg">
+          <p class="text-xs font-bold">Increased control</p>
+          <h4 class="text-xl">Coanda to shape</h4>
+          <p class="text-gray-100 text-xs"> Create clockwise and anticlockwise curls with one barrel. Enhanced Coanda
+            airflow attracts and self-wraps hair in both directions for voluminous curls or waves.</p>
+        </div>
+        <div class="col-1">
+          <img src="assets/smoothing.jpg">
+          <p class="text-xs font-bold">Hide flyaways</p>
+          <h4 class="text-xl">Coanda to smooth</h4>
+          <p class="text-gray-100 text-xs">Dry, smooth and hide flyaways with one multi-functional attachment. Two jets
+            of air work simultaneously on dry and straight hair to smooth and perfect your end style, with up to 58%
+            less frizz and flyaways.</p>
         </div>
       </div>
     </section>
 
+    <!-- Gallery -->
+    <section class="pt-10 bg-faq bg-lightgray">
+      <h1 class="text-2xl text-center font-medium text-gray-500">Lorem ipmsum...</h1>
+      <div class="overflow-x-auto whitespace-nowrap w-full">
+        <img src="assets/gallery-1.jpg" class="inline-block">
+        <img src="assets/gallery-2.jpg" class="inline-block">
+        <img src="assets/gallery-3.jpg" class="inline-block">
+        <img src="assets/gallery-4.jpg" class="inline-block">
+        <img src="assets/gallery-5.jpg" class="inline-block">
+        <img src="assets/gallery-6.jpg" class="inline-block">
+        <img src="assets/gallery-7.jpg" class="inline-block">
+      </div>
+    </section>
+
+    <!-- Allure  -->
+    <section class="py-10 px-32 border-t border-gray-200">
+      <div class="flex flex-col items-center">
+        <img src="assets/allure.jpg" width="250rem" height="75rem" />
+        <p class="text-gray-500 mt-4">Allure – The Beauty Expert</p>
+      </div>
+    </section>
+
     <!-- Testimonials -->
-    <section class="py-10 bg-lightblue text-white">
-      <h1 class="text-6xl text-center text-medium">5/5</span></h1>
+    <section class="py-10 px-32 bg-lightblue text-white">
+      <h1 class="text-6xl text-center text-medium">4.95/5</span></h1>
       <div class="flex flex-row items-center justify-center mt-2">
         <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" fill="#b47a4f">
           <path
@@ -162,8 +276,8 @@
         </svg>
         <span class="underline ml-2">133 reviews</span>
       </div>
-      <p class="text-center text-gray-300 text-md mt-2 text-medium">Overall rating by happy customers</p>
-      <div class="grid grid-cols-3 gap-x-10 my-6">
+      <p class="text-center text-gray-300 text-md mt-2 text-sm">Overall rating by happy customers</p>
+      <div class="grid grid-cols-3 gap-x-10 my-8">
         <div class="col-1 bg-white rounded text-black p-6">
           <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512" fill="#40486A">
             <path
@@ -226,19 +340,46 @@
             </svg>
           </div>
         </div>
+        <div class="col-1 bg-white rounded text-black p-6">
+          <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512" fill="#40486A">
+            <path
+              d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V320 288 216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H320c-35.3 0-64-28.7-64-64V320 288 216z" />
+          </svg>
+          <p>Very easy and powerful device. I love the fact it doesn’t damage your hair and the results are incredible!
+            Definitely would recommend! &#128150;</p>
+          <p class="text-gray-500 text-sm my-2">Noor</p>
+          <div class="flex flex-row items-center my-2">
+            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" fill="#b47a4f">
+              <path
+                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" fill="#b47a4f">
+              <path
+                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" fill="#b47a4f">
+              <path
+                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" fill="#b47a4f">
+              <path
+                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" fill="#b47a4f">
+              <path
+                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
+            </svg>
+          </div>
+        </div>
       </div>
-    </section>
-
-    <!-- Allure -->
-    <section class="py-10 border-b border-gray-200">
-      <div class="flex flex-col items-center">
-        <img src="assets/allure.jpg" width="250rem" height="75rem" />
-        <p class="text-gray-500">Allure – The Beauty Expert</p>
+      <div class="flex justify-center">
+        <button type="button" class="py-2 px-6 rounded border border-white text-white text-sm font-medium">View
+          More</button>
       </div>
     </section>
 
     <!-- Styling Guides -->
-    <section class="py-10">
+    <section class="py-10 px-32">
       <h2>Styling Guides</h2>
       <p class="text-gray-500 text-sm">Watch our quick, step-by-step guides to achieving your ideal style.</p>
       <div class="grid grid-cols-3 gap-x-6 my-4">
@@ -289,15 +430,15 @@
     </section>
 
     <!-- Contact -->
-    <section class="py-10 bg-blue">
+    <section class="py-10 px-32 bg-blue">
       <div>
-        <h1 class="text-center text-2xl text-white">Got a question? We're here to help! &#10024;</h1>
-        <form class="mt-4">
+        <h1 class="text-center text-2xl text-white">Got a question? We're here to help!</h1>
+        <form class="mt-4" id="contact">
           <div class="px-40">
             <p class="text-gray-500 text-sm">Required Fields *</p>
           </div>
           <div class="grid grid-cols-2 gap-6 px-40 py-2">
-            <div>
+            <div class="col-1">
               <label for="first-name" class="text-sm font-medium text-white">
                 First Name <span class="text-red-500">*</span>
               </label>
@@ -305,12 +446,12 @@
                 class="w-full mt-1 px-2 py-2 placeholder-gray-500 focus:outline-none focus:border-gray focus:ring-gray-500 text-sm rounded"
                 placeholder="First Name" autocomplete="off">
             </div>
-            <div>
+            <div class="col-1">
               <label for="last-name" class="text-sm font-medium text-white">
                 Last Name <span class="text-red-500">*</span>
               </label>
               <input id="last-name" name="first-name" type="text" required
-                class="w-full mt-1 px-2 py-2 placeholder-gray-500 focus:outline-none focus:border-gray focus:ring-gray-500text-sm rounded"
+                class="w-full mt-1 px-2 py-2 placeholder-gray-500 focus:outline-none focus:border-gray focus:ring-gray-500 text-sm rounded"
                 placeholder="Last Name" autocomplete="off">
             </div>
           </div>
@@ -350,9 +491,14 @@
         </form>
       </div>
     </section>
+
+    <!-- 0% installments, money back guarantee, 2 years-->
+
   </main>
   <footer class="bg-black px-32 py-4">
     <p class="text-gray-500 text-sm">© Dyson 2023</p>
+    <!-- Privacy Policy -->
+    <!-- Social Medias -->
   </footer>
 </body>
 
